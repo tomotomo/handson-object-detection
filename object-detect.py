@@ -36,7 +36,7 @@ def detect(frame):
             continue
         # クラスの取り出し。データセットより、15はperson
         idx = int(classes[i])
-        if idx != 20:
+        if idx != 8:
             continue
 
         # 認識座標の取り出し
@@ -44,7 +44,7 @@ def detect(frame):
         # 認識座標の描画
         cv2.rectangle(frame, (startX, startY), (endX, endY), (0, 255, 0), 2)
         # 認識結果の描画
-        label = '{}: {:.2f}%'.format('TV Monitor', confidence * 100)
+        label = '{}: {:.2f}%'.format('neko', confidence * 100)
         y = startY - 15 if startY - 15 > 15 else startY + 15
         cv2.putText(frame, label, (startX, y), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 1)
 
